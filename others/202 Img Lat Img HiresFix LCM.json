@@ -1,0 +1,1175 @@
+{
+  "last_node_id": 80,
+  "last_link_id": 176,
+  "nodes": [
+    {
+      "id": 71,
+      "type": "ttN hiresfixScale",
+      "pos": [
+        1690,
+        570
+      ],
+      "size": {
+        "0": 370,
+        "1": 610
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 173
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 153
+        }
+      ],
+      "outputs": [
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "infoWidgetHidden": true,
+        "Node name for S&R": "ttN hiresfixScale",
+        "ttNnodeVersion": "1.0.3"
+      },
+      "widgets_values": [
+        "4x PHO NMKD-Siax_200k.pth",
+        "Rescale based on model upscale image size ⬇",
+        true,
+        "lanczos",
+        "to longer side - maintain aspect",
+        50,
+        3840,
+        2160,
+        2160,
+        "disabled",
+        "Preview",
+        "ComfyUI",
+        false
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "shape": 1
+    },
+    {
+      "id": 47,
+      "type": "LoRA Stacker",
+      "pos": [
+        140,
+        1220
+      ],
+      "size": {
+        "0": 360,
+        "1": 130
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora_stack",
+          "type": "LORA_STACK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LORA_STACK",
+          "type": "LORA_STACK",
+          "links": [
+            97
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoRA Stacker"
+      },
+      "widgets_values": [
+        "simple",
+        1,
+        "None",
+        1,
+        "None",
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1
+      ],
+      "color": "#222233",
+      "bgcolor": "#333355",
+      "shape": 1
+    },
+    {
+      "id": 70,
+      "type": "FreeU",
+      "pos": [
+        520,
+        300
+      ],
+      "size": {
+        "0": 370,
+        "1": 130
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FreeU"
+      },
+      "widgets_values": [
+        1.1,
+        1.2,
+        0.6,
+        0.4
+      ],
+      "shape": 1
+    },
+    {
+      "id": 79,
+      "type": "Reroute",
+      "pos": [
+        1690,
+        480
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 175
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "shape": 1
+    },
+    {
+      "id": 80,
+      "type": "Reroute",
+      "pos": [
+        1690,
+        510
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 176
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "shape": 1
+    },
+    {
+      "id": 78,
+      "type": "Reroute",
+      "pos": [
+        1690,
+        450
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 174
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            173
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "shape": 1
+    },
+    {
+      "id": 72,
+      "type": "ttN hiresfixScale",
+      "pos": [
+        910,
+        570
+      ],
+      "size": {
+        "0": 370,
+        "1": 610
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 160
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 161
+        }
+      ],
+      "outputs": [
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            171
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            175
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "infoWidgetHidden": true,
+        "Node name for S&R": "ttN hiresfixScale",
+        "ttNnodeVersion": "1.0.3"
+      },
+      "widgets_values": [
+        "4x PHO NMKD-Siax_200k.pth",
+        "Rescale based on model upscale image size ⬇",
+        true,
+        "lanczos",
+        "by percentage",
+        40,
+        3840,
+        2160,
+        2160,
+        "disabled",
+        "Preview",
+        "ComfyUI",
+        true
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "shape": 1
+    },
+    {
+      "id": 39,
+      "type": "KSampler (Efficient)",
+      "pos": [
+        1300,
+        470
+      ],
+      "size": {
+        "0": 370,
+        "1": 710
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 94
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 92
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 93
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 171
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": 98
+        },
+        {
+          "name": "script",
+          "type": "SCRIPT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            135,
+            176
+          ],
+          "shape": 3,
+          "slot_index": 5
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler (Efficient)"
+      },
+      "widgets_values": [
+        0,
+        "fixed",
+        5,
+        7,
+        "dpmpp_3m_sde_gpu",
+        "karras",
+        0.54,
+        "auto",
+        "true"
+      ],
+      "color": "#332222",
+      "bgcolor": "#553333",
+      "shape": 1
+    },
+    {
+      "id": 46,
+      "type": "SDXLAspectRatio",
+      "pos": [
+        140,
+        300
+      ],
+      "size": {
+        "0": 360,
+        "1": 130
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "Width",
+          "type": "INT",
+          "links": [
+            95
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "Height",
+          "type": "INT",
+          "links": [
+            96
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "title": "201 Img Lat Img HiresScale LCM",
+      "properties": {
+        "Node name for S&R": "SDXLAspectRatio"
+      },
+      "widgets_values": [
+        1024,
+        1440,
+        "1024 x 1024"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 68,
+      "type": "SDXLPromptStyler",
+      "pos": [
+        140,
+        830
+      ],
+      "size": {
+        "0": 360,
+        "1": 350
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "text_positive",
+          "type": "STRING",
+          "links": [
+            143
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "text_negative",
+          "type": "STRING",
+          "links": [
+            144
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SDXLPromptStyler"
+      },
+      "widgets_values": [
+        "A high-resolution photo of an elegant, very beautiful 33-year-old Caucasian in a tailored suit and extravagant jewelry. Her face is illuminated by the light, she is sitting in a leather chair. In her hand is a crystal glass with expensive whiskey",
+        "",
+        "Neg 1",
+        "No"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 41,
+      "type": "KSampler (Efficient)",
+      "pos": [
+        520,
+        470
+      ],
+      "size": {
+        "0": 370,
+        "1": 710
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 172
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 82
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 83
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 84
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": 85
+        },
+        {
+          "name": "script",
+          "type": "SCRIPT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            94
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": [
+            92
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": [
+            93
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            98,
+            153,
+            161
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            160,
+            174
+          ],
+          "shape": 3,
+          "slot_index": 5
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler (Efficient)"
+      },
+      "widgets_values": [
+        459477365773526,
+        "fixed",
+        6,
+        1.3,
+        "lcm",
+        "normal",
+        1,
+        "auto",
+        "true"
+      ],
+      "color": "#332233",
+      "bgcolor": "#553355",
+      "shape": 1
+    },
+    {
+      "id": 35,
+      "type": "Efficient Loader",
+      "pos": [
+        140,
+        470
+      ],
+      "size": {
+        "0": 360,
+        "1": 322
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora_stack",
+          "type": "LORA_STACK",
+          "link": 97
+        },
+        {
+          "name": "cnet_stack",
+          "type": "CONTROL_NET_STACK",
+          "link": null
+        },
+        {
+          "name": "empty_latent_width",
+          "type": "INT",
+          "link": 95,
+          "widget": {
+            "name": "empty_latent_width"
+          }
+        },
+        {
+          "name": "empty_latent_height",
+          "type": "INT",
+          "link": 96,
+          "widget": {
+            "name": "empty_latent_height"
+          }
+        },
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": 143,
+          "widget": {
+            "name": "positive"
+          }
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "link": 144,
+          "widget": {
+            "name": "negative"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            172
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": [
+            82
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": [
+            83
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            84
+          ],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            85
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "DEPENDENCIES",
+          "type": "DEPENDENCIES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "Lat Img",
+      "properties": {
+        "Node name for S&R": "Efficient Loader"
+      },
+      "widgets_values": [
+        "XL REA Realvis 1.safetensors",
+        "XL GEN SDXL vae.safetensors",
+        -1,
+        "XL LCM High Speed.safetensors",
+        1,
+        1,
+        "rotterdam euromast",
+        "",
+        "none",
+        "comfy",
+        512,
+        512,
+        1
+      ],
+      "color": "#223322",
+      "bgcolor": "#335533",
+      "shape": 1
+    }
+  ],
+  "links": [
+    [
+      82,
+      35,
+      1,
+      41,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      83,
+      35,
+      2,
+      41,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      84,
+      35,
+      3,
+      41,
+      3,
+      "LATENT"
+    ],
+    [
+      85,
+      35,
+      4,
+      41,
+      4,
+      "VAE"
+    ],
+    [
+      92,
+      41,
+      1,
+      39,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      93,
+      41,
+      2,
+      39,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      94,
+      41,
+      0,
+      39,
+      0,
+      "MODEL"
+    ],
+    [
+      95,
+      46,
+      0,
+      35,
+      2,
+      "INT"
+    ],
+    [
+      96,
+      46,
+      1,
+      35,
+      3,
+      "INT"
+    ],
+    [
+      97,
+      47,
+      0,
+      35,
+      0,
+      "LORA_STACK"
+    ],
+    [
+      98,
+      41,
+      4,
+      39,
+      4,
+      "VAE"
+    ],
+    [
+      135,
+      39,
+      5,
+      64,
+      0,
+      "IMAGE"
+    ],
+    [
+      143,
+      68,
+      0,
+      35,
+      4,
+      "STRING"
+    ],
+    [
+      144,
+      68,
+      1,
+      35,
+      5,
+      "STRING"
+    ],
+    [
+      153,
+      41,
+      4,
+      71,
+      1,
+      "VAE"
+    ],
+    [
+      160,
+      41,
+      5,
+      72,
+      0,
+      "IMAGE"
+    ],
+    [
+      161,
+      41,
+      4,
+      72,
+      1,
+      "VAE"
+    ],
+    [
+      171,
+      72,
+      0,
+      39,
+      3,
+      "LATENT"
+    ],
+    [
+      172,
+      35,
+      0,
+      41,
+      0,
+      "MODEL"
+    ],
+    [
+      173,
+      78,
+      0,
+      71,
+      0,
+      "IMAGE"
+    ],
+    [
+      174,
+      41,
+      5,
+      78,
+      0,
+      "*"
+    ],
+    [
+      175,
+      72,
+      1,
+      79,
+      0,
+      "*"
+    ],
+    [
+      176,
+      39,
+      5,
+      80,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
