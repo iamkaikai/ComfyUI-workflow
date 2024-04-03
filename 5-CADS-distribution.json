@@ -1,0 +1,1282 @@
+{
+  "last_node_id": 72,
+  "last_link_id": 135,
+  "nodes": [
+    {
+      "id": 48,
+      "type": "Note",
+      "pos": [
+        -1192,
+        -652
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "BASQUIAT-ART, beige, black, teal, orange, gray"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 41,
+      "type": "PhotoshopToComfyUI",
+      "pos": [
+        -960,
+        200
+      ],
+      "size": {
+        "0": 400,
+        "1": 160
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PhotoshopToComfyUI"
+      },
+      "widgets_values": [
+        "12341234",
+        false
+      ]
+    },
+    {
+      "id": 36,
+      "type": "LatentComposite",
+      "pos": [
+        -960,
+        480
+      ],
+      "size": {
+        "0": 399.2652587890625,
+        "1": 126
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples_to",
+          "type": "LATENT",
+          "link": null
+        },
+        {
+          "name": "samples_from",
+          "type": "LATENT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LatentComposite"
+      },
+      "widgets_values": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 35,
+      "type": "RepeatLatentBatch",
+      "pos": [
+        -960,
+        680
+      ],
+      "size": {
+        "0": 398.5967102050781,
+        "1": 67.98028564453125
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RepeatLatentBatch"
+      },
+      "widgets_values": [
+        4
+      ]
+    },
+    {
+      "id": 68,
+      "type": "KSampler (LACE)",
+      "pos": [
+        -160,
+        -1120
+      ],
+      "size": {
+        "0": 330,
+        "1": 630
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 123,
+          "slot_index": 0
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 124,
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 125,
+          "slot_index": 2
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 126,
+          "slot_index": 3
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": 127,
+          "slot_index": 4
+        },
+        {
+          "name": "script",
+          "type": "SCRIPT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            121
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "LATENT_LIST",
+          "type": "LIST",
+          "links": [
+            122
+          ],
+          "shape": 3,
+          "slot_index": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler (LACE)"
+      },
+      "widgets_values": [
+        752919380420524,
+        "fixed",
+        20,
+        7,
+        "euler_test",
+        "normal",
+        1,
+        "auto",
+        "true",
+        20,
+        0
+      ]
+    },
+    {
+      "id": 65,
+      "type": "CADS",
+      "pos": [
+        -520,
+        280
+      ],
+      "size": {
+        "0": 315,
+        "1": 226
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 113
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            114
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CADS"
+      },
+      "widgets_values": [
+        0.6,
+        1,
+        0.25,
+        "Exponential",
+        "True",
+        0,
+        "both",
+        "y"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "Efficient Loader (LACE)",
+      "pos": [
+        -960,
+        -400
+      ],
+      "size": {
+        "0": 400,
+        "1": 510
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora_stack",
+          "type": "LORA_STACK",
+          "link": null
+        },
+        {
+          "name": "cnet_stack",
+          "type": "CONTROL_NET_STACK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            111,
+            113,
+            123,
+            131
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": [
+            107,
+            115,
+            124,
+            132
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": [
+            108,
+            116,
+            125,
+            133
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            102,
+            117,
+            126,
+            134
+          ],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            103,
+            118,
+            127,
+            135
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [],
+          "shape": 3,
+          "slot_index": 5
+        },
+        {
+          "name": "DEPENDENCIES",
+          "type": "DEPENDENCIES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Efficient Loader (LACE)"
+      },
+      "widgets_values": [
+        "v1-5-pruned-emaonly.ckpt",
+        "vae-ft-ema.safetensors",
+        -1,
+        "None",
+        1,
+        1,
+        "a beautiful cat",
+        "poorly Rendered face\npoorly drawn face\npoor facial details\npoorly drawn hands\npoorly rendered hands\nlow resolution\nImages cut out at the top, left, right, bottom.\nbad composition\nmutated body parts\nblurry image\ndisfigured\noversaturated\nbad anatomy\ndeformed body features\n",
+        "none",
+        "comfy",
+        512,
+        512,
+        12
+      ]
+    },
+    {
+      "id": 70,
+      "type": "KSampler (LACE)",
+      "pos": [
+        -160,
+        1000
+      ],
+      "size": {
+        "0": 330,
+        "1": 630
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 130
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 132,
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 133,
+          "slot_index": 2
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 134,
+          "slot_index": 3
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": 135,
+          "slot_index": 4
+        },
+        {
+          "name": "script",
+          "type": "SCRIPT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            128
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "LATENT_LIST",
+          "type": "LIST",
+          "links": [
+            129
+          ],
+          "shape": 3,
+          "slot_index": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler (LACE)"
+      },
+      "widgets_values": [
+        752919380420524,
+        "fixed",
+        20,
+        7,
+        "euler_test",
+        "normal",
+        1,
+        "auto",
+        "true",
+        20,
+        0
+      ]
+    },
+    {
+      "id": 66,
+      "type": "KSampler (LACE)",
+      "pos": [
+        -160,
+        280
+      ],
+      "size": {
+        "0": 330,
+        "1": 630
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 114
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 115,
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 116,
+          "slot_index": 2
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 117,
+          "slot_index": 3
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": 118
+        },
+        {
+          "name": "script",
+          "type": "SCRIPT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            119
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "LATENT_LIST",
+          "type": "LIST",
+          "links": [
+            120
+          ],
+          "shape": 3,
+          "slot_index": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler (LACE)"
+      },
+      "widgets_values": [
+        752919380420524,
+        "fixed",
+        20,
+        7,
+        "euler_test",
+        "normal",
+        1,
+        "auto",
+        "true",
+        20,
+        0
+      ]
+    },
+    {
+      "id": 72,
+      "type": "LACE Visualizer",
+      "pos": [
+        840,
+        320
+      ],
+      "size": {
+        "0": 554.6183471679688,
+        "1": 650.4014892578125
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 128,
+          "slot_index": 0
+        },
+        {
+          "name": "latents_list",
+          "type": "LIST",
+          "link": 129,
+          "slot_index": 1
+        }
+      ],
+      "title": "CADS - Gaussian",
+      "properties": {
+        "Node name for S&R": "LACE Visualizer"
+      },
+      "widgets_values": [
+        512
+      ]
+    },
+    {
+      "id": 71,
+      "type": "CADS",
+      "pos": [
+        -520,
+        1000
+      ],
+      "size": {
+        "0": 315,
+        "1": 226
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 131,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            130
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CADS"
+      },
+      "widgets_values": [
+        0.6,
+        1,
+        0.25,
+        "Gaussian",
+        "True",
+        0,
+        "both",
+        "y"
+      ]
+    },
+    {
+      "id": 62,
+      "type": "KSampler (LACE)",
+      "pos": [
+        -160,
+        -401
+      ],
+      "size": {
+        "0": 330,
+        "1": 630
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 112
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 107,
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 108,
+          "slot_index": 2
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 102,
+          "slot_index": 3
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": 103
+        },
+        {
+          "name": "script",
+          "type": "SCRIPT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            109
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "LATENT_LIST",
+          "type": "LIST",
+          "links": [
+            110
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler (LACE)"
+      },
+      "widgets_values": [
+        752919380420524,
+        "fixed",
+        20,
+        7,
+        "euler_test",
+        "normal",
+        1,
+        "auto",
+        "true",
+        20,
+        0
+      ]
+    },
+    {
+      "id": 69,
+      "type": "LACE Visualizer",
+      "pos": [
+        240,
+        -400
+      ],
+      "size": {
+        "0": 554.6183471679688,
+        "1": 650.4014892578125
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 121,
+          "slot_index": 0
+        },
+        {
+          "name": "latents_list",
+          "type": "LIST",
+          "link": 122,
+          "slot_index": 1
+        }
+      ],
+      "title": "Original",
+      "properties": {
+        "Node name for S&R": "LACE Visualizer"
+      },
+      "widgets_values": [
+        512
+      ]
+    },
+    {
+      "id": 55,
+      "type": "LACE Visualizer",
+      "pos": [
+        840,
+        -400
+      ],
+      "size": {
+        "0": 554.6183471679688,
+        "1": 650.4014892578125
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 109,
+          "slot_index": 0
+        },
+        {
+          "name": "latents_list",
+          "type": "LIST",
+          "link": 110,
+          "slot_index": 1
+        }
+      ],
+      "title": "CADS - Uniform",
+      "properties": {
+        "Node name for S&R": "LACE Visualizer"
+      },
+      "widgets_values": [
+        512
+      ]
+    },
+    {
+      "id": 67,
+      "type": "LACE Visualizer",
+      "pos": [
+        240,
+        320
+      ],
+      "size": {
+        "0": 554.6183471679688,
+        "1": 650.4014892578125
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 119,
+          "slot_index": 0
+        },
+        {
+          "name": "latents_list",
+          "type": "LIST",
+          "link": 120,
+          "slot_index": 1
+        }
+      ],
+      "title": "CADS - Exponential",
+      "properties": {
+        "Node name for S&R": "LACE Visualizer"
+      },
+      "widgets_values": [
+        512
+      ]
+    },
+    {
+      "id": 64,
+      "type": "CADS",
+      "pos": [
+        -520,
+        -400
+      ],
+      "size": {
+        "0": 315,
+        "1": 226
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 111
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            112
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CADS"
+      },
+      "widgets_values": [
+        0.6,
+        1,
+        0.25,
+        "Uniform",
+        "True",
+        0,
+        "both",
+        "y"
+      ]
+    }
+  ],
+  "links": [
+    [
+      102,
+      28,
+      3,
+      62,
+      3,
+      "LATENT"
+    ],
+    [
+      103,
+      28,
+      4,
+      62,
+      4,
+      "VAE"
+    ],
+    [
+      107,
+      28,
+      1,
+      62,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      108,
+      28,
+      2,
+      62,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      109,
+      62,
+      4,
+      55,
+      0,
+      "VAE"
+    ],
+    [
+      110,
+      62,
+      6,
+      55,
+      1,
+      "LIST"
+    ],
+    [
+      111,
+      28,
+      0,
+      64,
+      0,
+      "MODEL"
+    ],
+    [
+      112,
+      64,
+      0,
+      62,
+      0,
+      "MODEL"
+    ],
+    [
+      113,
+      28,
+      0,
+      65,
+      0,
+      "MODEL"
+    ],
+    [
+      114,
+      65,
+      0,
+      66,
+      0,
+      "MODEL"
+    ],
+    [
+      115,
+      28,
+      1,
+      66,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      116,
+      28,
+      2,
+      66,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      117,
+      28,
+      3,
+      66,
+      3,
+      "LATENT"
+    ],
+    [
+      118,
+      28,
+      4,
+      66,
+      4,
+      "VAE"
+    ],
+    [
+      119,
+      66,
+      4,
+      67,
+      0,
+      "VAE"
+    ],
+    [
+      120,
+      66,
+      6,
+      67,
+      1,
+      "LIST"
+    ],
+    [
+      121,
+      68,
+      4,
+      69,
+      0,
+      "VAE"
+    ],
+    [
+      122,
+      68,
+      6,
+      69,
+      1,
+      "LIST"
+    ],
+    [
+      123,
+      28,
+      0,
+      68,
+      0,
+      "MODEL"
+    ],
+    [
+      124,
+      28,
+      1,
+      68,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      125,
+      28,
+      2,
+      68,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      126,
+      28,
+      3,
+      68,
+      3,
+      "LATENT"
+    ],
+    [
+      127,
+      28,
+      4,
+      68,
+      4,
+      "VAE"
+    ],
+    [
+      128,
+      70,
+      4,
+      72,
+      0,
+      "VAE"
+    ],
+    [
+      129,
+      70,
+      6,
+      72,
+      1,
+      "LIST"
+    ],
+    [
+      130,
+      71,
+      0,
+      70,
+      0,
+      "MODEL"
+    ],
+    [
+      131,
+      28,
+      0,
+      71,
+      0,
+      "MODEL"
+    ],
+    [
+      132,
+      28,
+      1,
+      70,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      133,
+      28,
+      2,
+      70,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      134,
+      28,
+      3,
+      70,
+      3,
+      "LATENT"
+    ],
+    [
+      135,
+      28,
+      4,
+      70,
+      4,
+      "VAE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
