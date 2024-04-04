@@ -1,0 +1,834 @@
+{
+  "last_node_id": 96,
+  "last_link_id": 187,
+  "nodes": [
+    {
+      "id": 69,
+      "type": "LACE Visualizer",
+      "pos": [
+        275,
+        -322
+      ],
+      "size": {
+        "0": 451.4325256347656,
+        "1": 542.423095703125
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 136,
+          "slot_index": 0
+        },
+        {
+          "name": "latents_list",
+          "type": "LIST",
+          "link": 137,
+          "slot_index": 1
+        }
+      ],
+      "title": "Original",
+      "properties": {
+        "Node name for S&R": "LACE Visualizer"
+      },
+      "widgets_values": [
+        512
+      ]
+    },
+    {
+      "id": 64,
+      "type": "CADS",
+      "pos": [
+        -520,
+        -480
+      ],
+      "size": {
+        "0": 315,
+        "1": 226
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 149
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            150
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CADS"
+      },
+      "widgets_values": [
+        0.6,
+        1,
+        0.25,
+        "Gaussian",
+        "True",
+        1,
+        "both",
+        "c_crossattn"
+      ]
+    },
+    {
+      "id": 48,
+      "type": "Note",
+      "pos": [
+        -973,
+        206
+      ],
+      "size": {
+        "0": 422.6798095703125,
+        "1": 58
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "BAUHAUS-ART, silver, brown, black, silver, olive, gray, maroon, silver"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 96,
+      "type": "Note",
+      "pos": [
+        -960,
+        360
+      ],
+      "size": {
+        "0": 422.6798095703125,
+        "1": 58
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "pixel art, pokemon map, island, center town square, blue water, surrounding ocean, "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 28,
+      "type": "Efficient Loader (LACE)",
+      "pos": [
+        -960,
+        -480
+      ],
+      "size": {
+        "0": 422.147705078125,
+        "1": 653.297119140625
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora_stack",
+          "type": "LORA_STACK",
+          "link": 145
+        },
+        {
+          "name": "cnet_stack",
+          "type": "CONTROL_NET_STACK",
+          "link": 144
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            149
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": [
+            107
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": [
+            108
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            102
+          ],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            103
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [],
+          "shape": 3,
+          "slot_index": 5
+        },
+        {
+          "name": "DEPENDENCIES",
+          "type": "DEPENDENCIES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Efficient Loader (LACE)"
+      },
+      "widgets_values": [
+        "v1-5-pruned-emaonly.ckpt",
+        "vae-ft-ema.safetensors",
+        -1,
+        "None",
+        1,
+        1,
+        "pixel art, pokemon map, island, center town square, blue water, surrounding ocean, ",
+        "bad composition, ugly, blurry edge",
+        "none",
+        "comfy",
+        512,
+        512,
+        4
+      ]
+    },
+    {
+      "id": 62,
+      "type": "KSampler (LACE)",
+      "pos": [
+        -147,
+        -440
+      ],
+      "size": {
+        "0": 330,
+        "1": 654
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 150
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 107,
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 108,
+          "slot_index": 2
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 102,
+          "slot_index": 3
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": 103
+        },
+        {
+          "name": "script",
+          "type": "SCRIPT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            136
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 5
+        },
+        {
+          "name": "LATENT_LIST",
+          "type": "LIST",
+          "links": [
+            137
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler (LACE)"
+      },
+      "widgets_values": [
+        752919380421145,
+        "increment",
+        16,
+        9,
+        "euler_test",
+        "exponential",
+        1,
+        "auto",
+        "true",
+        16,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 41,
+      "type": "PhotoshopToComfyUI",
+      "pos": [
+        -1880,
+        -280
+      ],
+      "size": {
+        "0": 400,
+        "1": 160
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            143
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PhotoshopToComfyUI"
+      },
+      "widgets_values": [
+        "12341234",
+        false
+      ]
+    },
+    {
+      "id": 76,
+      "type": "Control Net Stacker",
+      "pos": [
+        -1400,
+        -240
+      ],
+      "size": {
+        "0": 315,
+        "1": 146
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 142
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 143
+        },
+        {
+          "name": "cnet_stack",
+          "type": "CONTROL_NET_STACK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CNET_STACK",
+          "type": "CONTROL_NET_STACK",
+          "links": [
+            144
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Control Net Stacker"
+      },
+      "widgets_values": [
+        1,
+        0,
+        0.75
+      ],
+      "color": "#223322",
+      "bgcolor": "#335533",
+      "shape": 1
+    },
+    {
+      "id": 77,
+      "type": "LoRA Stacker",
+      "pos": [
+        -1400,
+        -520
+      ],
+      "size": {
+        "0": 315,
+        "1": 178
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora_stack",
+          "type": "LORA_STACK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LORA_STACK",
+          "type": "LORA_STACK",
+          "links": [
+            145
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoRA Stacker"
+      },
+      "widgets_values": [
+        "simple",
+        2,
+        "None",
+        0,
+        1,
+        1,
+        "sd_1.5_lcm.safetensors",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1,
+        "None",
+        1,
+        1,
+        1
+      ],
+      "color": "#222233",
+      "bgcolor": "#333355",
+      "shape": 1
+    },
+    {
+      "id": 75,
+      "type": "ControlNetLoader",
+      "pos": [
+        -1880,
+        -400
+      ],
+      "size": {
+        "0": 396.4189453125,
+        "1": 58.12457275390625
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            142
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoader"
+      },
+      "widgets_values": [
+        "control_v11e_sd15_ip2p.pth"
+      ]
+    }
+  ],
+  "links": [
+    [
+      102,
+      28,
+      3,
+      62,
+      3,
+      "LATENT"
+    ],
+    [
+      103,
+      28,
+      4,
+      62,
+      4,
+      "VAE"
+    ],
+    [
+      107,
+      28,
+      1,
+      62,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      108,
+      28,
+      2,
+      62,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      136,
+      62,
+      4,
+      69,
+      0,
+      "VAE"
+    ],
+    [
+      137,
+      62,
+      6,
+      69,
+      1,
+      "LIST"
+    ],
+    [
+      142,
+      75,
+      0,
+      76,
+      0,
+      "CONTROL_NET"
+    ],
+    [
+      143,
+      41,
+      0,
+      76,
+      1,
+      "IMAGE"
+    ],
+    [
+      144,
+      76,
+      0,
+      28,
+      1,
+      "CONTROL_NET_STACK"
+    ],
+    [
+      145,
+      77,
+      0,
+      28,
+      0,
+      "LORA_STACK"
+    ],
+    [
+      149,
+      28,
+      0,
+      64,
+      0,
+      "MODEL"
+    ],
+    [
+      150,
+      64,
+      0,
+      62,
+      0,
+      "MODEL"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
